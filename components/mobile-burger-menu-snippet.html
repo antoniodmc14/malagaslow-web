@@ -1,0 +1,43 @@
+<!--
+  MOBILE BURGER MENU – Reusable snippet for <header>
+  Paste inside your <header>, after the desktop <nav>.
+  Requires: burger icon CSS in <style>, and toggle script before </body>.
+  Update hrefs for home (e.g. "/" vs "index.html") per page.
+-->
+
+    <!-- Burger button: visible only on mobile -->
+    <button type="button" id="burger-btn" class="flex md:hidden items-center justify-center w-10 h-10 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded-lg transition-colors duration-300" aria-expanded="false" aria-label="Open menu">
+      <span class="burger-icon" aria-hidden="true">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- Mobile menu: backdrop + slide-in panel (place immediately after </header>) -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden" aria-hidden="true"></div>
+  <aside id="mobile-menu" class="fixed top-0 right-0 h-full w-[min(320px,85vw)] bg-white shadow-2xl z-[70] flex flex-col pt-24 pb-8 px-8 transform translate-x-full transition-transform duration-300 ease-out md:hidden" aria-label="Main menu" aria-hidden="true">
+    <nav class="flex flex-col gap-2" aria-label="Mobile navigation">
+      <a href="index.html" class="mobile-nav-link text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[28px] font-medium leading-tight tracking-[-0.02em]">Home</a>
+      <a href="index.html#tours" class="mobile-nav-link text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[28px] font-medium leading-tight tracking-[-0.02em]">Tours</a>
+      <a href="index.html#about" class="mobile-nav-link text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[28px] font-medium leading-tight tracking-[-0.02em]">About Us</a>
+      <div class="pt-4 mt-2 border-t border-[#307EFF]">
+        <p class="text-[#1E1E1E] text-[20px] font-semibold px-2 pb-2 tracking-[-0.02em]">Language</p>
+        <button type="button" class="mobile-lang-option block w-full text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-3 px-2 text-[28px] font-medium leading-tight tracking-[-0.02em]">Spanish</button>
+        <button type="button" class="mobile-lang-option block w-full text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-3 px-2 text-[28px] font-medium leading-tight tracking-[-0.02em]">English</button>
+      </div>
+    </nav>
+  </aside>
+
+<!--
+  BURGER ICON CSS (add to <style>):
+  .burger-icon { display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 24px; height: 24px; }
+  .burger-icon .burger-line { display: block; width: 100%; height: 2px; background-color: currentColor; border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .burger-icon.open .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .burger-icon.open .burger-line:nth-child(2) { opacity: 0; }
+  .burger-icon.open .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  TOGGLE SCRIPT: Ensure each page has JS that selects #burger-btn, #mobile-menu-backdrop, #mobile-menu,
+  and .mobile-nav-link / .mobile-lang-option to open/close the menu and update aria attributes.
+-->

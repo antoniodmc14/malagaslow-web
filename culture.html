@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art & Culture | MálagaSlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Gilroy', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('fonts/gilroy-regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('fonts/gilroy-semibold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html {
+      overflow-y: scroll !important;
+    }
+
+    body {
+      font-family: 'Gilroy', sans-serif;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    /* Lenis smooth scroll */
+    html.lenis,
+    html.lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overflow: auto;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    /* Time/price info tags: default gray, hover = blue slide-in from left */
+    .info-tag {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      background-color: #F3F4F6;
+      color: #000;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      cursor: default;
+    }
+
+    .info-tag::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background-color: #307EFF;
+      transition: width 0.35s ease-in-out;
+      z-index: 0;
+    }
+
+    .info-tag:hover::before {
+      width: 100%;
+    }
+
+    .info-tag .info-tag-text {
+      position: relative;
+      z-index: 1;
+      transition: color 0.35s ease-in-out;
+    }
+
+    .info-tag:hover .info-tag-text {
+      color: #fff;
+    }
+
+    /* Burger icon: 3 lines → X */
+    .burger-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .burger-icon .burger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .burger-icon.open .burger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-icon.open .burger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-icon.open .burger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-white h-full flex flex-col min-h-screen">
+  <!-- Header -->
+  <header
+    class="sticky top-0 w-full z-50 flex items-center justify-between px-6 md:px-10 lg:px-16 py-4 bg-transparent transition-all duration-300 ease-in-out">
+    <a href="index.html" class="flex items-center">
+      <img src="img/Logo_Header.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
+    </a>
+
+    <!-- Desktop nav: hidden on mobile -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html#hero"
+        class="relative group text-[#307EFF] font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
+        <span>Home</span>
+        <span
+          class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="index.html#tours"
+        class="relative group text-[#307EFF] font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
+        <span>Tours</span>
+        <span class="nav-underline absolute -bottom-1 left-0 w-full h-[2px] bg-[#307EFF]"></span>
+      </a>
+      <a href="index.html#about"
+        class="relative group text-[#307EFF] font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
+        <span>About Us</span>
+        <span
+          class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <div class="relative">
+        <button type="button" id="lang-toggle"
+          class="relative group flex items-center gap-1 text-[#307EFF] font-medium tracking-[-0.02em] cursor-pointer focus:outline-none transition-colors duration-300 py-1">
+          <span>En</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <span
+            class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
+        </button>
+        <div id="lang-menu"
+          class="hidden absolute right-0 mt-3 w-[97px] h-[94px] bg-white rounded-[24px] overflow-hidden shadow-xl flex flex-col divide-y divide-gray-200">
+          <button type="button"
+            class="w-full h-full flex-1 px-3 text-center text-[13px] font-normal text-[#307EFF] hover:bg-gray-50 transition-colors duration-300">Spanish</button>
+          <button type="button"
+            class="w-full h-full flex-1 px-3 text-center text-[13px] font-normal text-[#307EFF] hover:bg-gray-50 transition-colors duration-300">English</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Burger button: visible only on mobile -->
+    <button type="button" id="burger-btn"
+      class="flex md:hidden items-center justify-center w-10 h-10 text-[#1E1E1E] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#307EFF] focus:ring-offset-2 rounded-lg"
+      aria-expanded="false" aria-label="Open menu">
+      <span class="burger-icon text-[#307EFF]" aria-hidden="true">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- Mobile menu backdrop and panel -->
+  <div id="mobile-menu-backdrop"
+    class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    aria-hidden="true"></div>
+  <aside id="mobile-menu"
+    class="fixed top-0 right-0 h-screen w-[320px] max-w-[85vw] bg-white z-[100] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 pb-8 px-8"
+    aria-label="Main menu" aria-hidden="true">
+    <button type="button" id="mobile-menu-close" aria-label="Close menu"
+      class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#307EFF] focus:ring-offset-2 rounded-lg">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div id="mobile-menu-content" class="transition-opacity duration-300 ease-out flex-1">
+      <nav class="flex flex-col text-left" aria-label="Mobile navigation">
+        <a href="index.html#hero"
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">Home</a>
+        <a href="index.html#tours"
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
+        <a href="index.html#about"
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
+        <button type="button"
+          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</button>
+        <button type="button"
+          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">English</button>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-24 flex-grow">
+    <div class="grid grid-cols-1 gap-12 lg:flex lg:items-stretch lg:gap-12">
+      <!-- Left column (60%) -->
+      <div class="space-y-12 lg:w-[60%] lg:flex-shrink-0 lg:min-w-0">
+        <div class="max-w-xl">
+          <h1 class="text-[#1E1E1E] text-4xl md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] mb-4">Art & Culture
+          </h1>
+          <div class="w-full h-px bg-[#307EFF]/30 mb-4" aria-hidden="true"></div>
+          <p class="text-[#1E1E1E] text-base md:text-lg !leading-[1.3rem] md:!leading-[1.5rem] tracking-[-0.04em]">
+            We’ll weave through the streets that inspired great artists, showcasing the city’s stunning architecture and
+            world-class galleries. From the Picasso Museum and the avant-garde Pompidou Centre to the historic grandeur
+            of the Museo de Málaga, we invite you to discover how light and history have shaped the city's creative
+            spirit. Enjoy an intimate look at the hidden patios and monuments that make this city a living museum, all
+            while drifting peacefully through its most artistic corners.
+          </p>
+        </div>
+
+        <!-- Time and price info tags (informational only) -->
+        <div class="flex items-center gap-2">
+          <span class="info-tag" aria-label="Duration: 60 minutes"><span class="info-tag-text">60 min</span></span>
+          <span class="info-tag" aria-label="Price: 120 euros"><span class="info-tag-text">120 €</span></span>
+        </div>
+
+        <!-- Info grid: Water, Capacity, Safety (with blue vertical dividers) -->
+        <div class="max-w-xl pb-2">
+          <div
+            class="flex flex-col sm:flex-row gap-4 sm:gap-0 divide-y sm:divide-y-0 sm:divide-x divide-[#307EFF]/30 mb-12 pt-2">
+            <div class="flex-1 flex flex-col pl-0 pr-4 sm:px-0 sm:pr-4">
+              <div class="group flex flex-row items-center gap-2 mb-2">
+                <svg class="w-6 h-6 flex-shrink-0 text-[#307EFF]" fill="currentColor" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z" />
+                </svg>
+                <h3
+                  class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
+                  Water included</h3>
+              </div>
+              <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
+                Stay hydrated while you explore. We provide a fresh bottle of mineral water for every guest on our
+                private Málaga tour.
+              </p>
+            </div>
+            <div class="flex-1 flex flex-col pt-4 sm:pt-0 pl-0 pr-4 sm:px-4">
+              <div class="group flex flex-row items-center gap-2 mb-2">
+                <img src="img/icons/vector_four.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
+                  aria-hidden="true" />
+                <h3
+                  class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
+                  Capacity</h3>
+              </div>
+              <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
+                Our Tuk Tuks carry up to 4 passengers, making this the perfect private experience for families or small
+                groups.
+              </p>
+            </div>
+            <div class="flex-1 flex flex-col pt-4 sm:pt-0 pl-0 pr-4 sm:px-0 sm:pl-4">
+              <div class="group flex flex-row items-center gap-2 mb-2">
+                <img src="img/icons/vector_baby.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
+                  aria-hidden="true" />
+                <h3
+                  class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
+                  Safety</h3>
+              </div>
+              <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
+                Our tours are safe, secure, and suitable for children from 4 years old, ensuring a worry-free experience
+                in the historic center.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#booking"
+          class="block mt-12 mb-12 md:mt-8 md:mb-0 bg-[#307EFF] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 mx-auto md:inline-block md:mx-0 w-fit">
+          Book your tour
+        </a>
+      </div>
+
+      <!-- Right column (40%): image collage + cancellation notice -->
+      <div class="h-full flex flex-col gap-6 lg:w-[40%] lg:flex-shrink-0 lg:min-w-0 lg:h-full lg:min-h-[500px]">
+        <div class="flex-1 min-h-0 hidden md:flex md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-4 lg:grid lg:grid-cols-[1.2fr_1fr] lg:grid-rows-[1fr_1fr] lg:gap-4 lg:w-full lg:h-full">
+          <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:row-span-2 lg:h-full lg:w-full lg:rounded-xl">
+            <a href="img/Pompidou.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Art & Culture tour – Málaga galleries and architecture">
+              <img src="img/Pompidou.png" alt="Art & Culture tour – Málaga galleries and architecture" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            </a>
+          </div>
+          <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
+            <a href="img/Museo_picasso.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Málaga galleries and artist-inspired streets">
+              <img src="img/Museo_picasso.png" alt="Málaga galleries and artist-inspired streets" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            </a>
+          </div>
+          <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
+            <a href="img/Museo_malaga.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="City architecture and cultural sights">
+              <img src="img/Museo_malaga.png" alt="City architecture and cultural sights" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 flex gap-4 md:max-w-[576px] md:mx-auto">
+          <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#307EFF] flex items-center justify-center">
+            <span class="text-white font-bold text-lg">!</span>
+          </div>
+          <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em]">
+            If you need to cancel, please let us know at least <strong>48 hours in advance</strong> for a full refund.
+            Cancellations made within 48 hours of the scheduled tour will not be eligible for reimbursement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="bg-[#1E1E1E] text-[#FFFFFF] py-6 px-8 md:py-16 md:px-16 md:text-[16px]">
+    <div class="max-w-[1440px] mx-auto">
+      <!-- Mobile: three-column grid (top) + centered branding (bottom) -->
+      <div class="grid grid-cols-3 gap-x-1 gap-y-6 text-left md:hidden">
+        <div class="flex flex-col space-y-2 min-w-0 break-words">
+          <a href="tel:+34600123456" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">+34
+            600 123 456</a>
+          <a href="mailto:info@malagaslow.com"
+            class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">info@malagaslow.com</a>
+        </div>
+        <div class="flex flex-col space-y-2 min-w-0 break-words text-center">
+          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Instagram</a>
+          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">WhatsApp</a>
+        </div>
+        <div class="flex flex-col space-y-2 min-w-0 break-words">
+          <button type="button"
+            class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer text-left break-words">Language</button>
+          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Privacy Policy</a>
+          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Cookie Policy</a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center mt-8 py-4 md:hidden">
+        <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-6 w-auto object-contain" />
+        <p class="text-[#FFFFFF] text-[10px] mt-1.5">© 2026 All Rights Reserved</p>
+      </div>
+
+      <!-- Desktop: original horizontal layout (logo left, three columns right) -->
+      <div class="hidden md:flex md:flex-row md:items-start md:justify-between md:gap-12">
+        <div class="flex flex-col space-y-2">
+          <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
+          <p class="text-[#FFFFFF] text-sm">© 2026 All Rights Reserved</p>
+        </div>
+        <div class="flex flex-row items-start gap-10 lg:gap-20">
+          <div class="flex flex-col space-y-2">
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Instagram</a>
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">WhatsApp</a>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <a href="tel:+34600123456" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">+34 600 123 456</a>
+            <a href="mailto:info@malagaslow.com"
+              class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">info@malagaslow.com</a>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <button type="button" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer text-left">
+              Language
+            </button>
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Privacy Policy</a>
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm';
+
+    const lenis = new Lenis({
+      duration: 1.35,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      autoResize: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+
+  <script>
+    (function () {
+      var burgerBtn = document.getElementById('burger-btn');
+      var burgerIcon = burgerBtn && burgerBtn.querySelector('.burger-icon');
+      var backdrop = document.getElementById('mobile-menu-backdrop');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var menuContent = document.getElementById('mobile-menu-content');
+      var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      var closeBtn = document.getElementById('mobile-menu-close');
+
+      function openMobileMenu() {
+        if (menuContent) menuContent.classList.remove('opacity-0');
+        if (burgerIcon) burgerIcon.classList.add('open');
+        if (burgerBtn) {
+          burgerBtn.setAttribute('aria-expanded', 'true');
+          burgerBtn.setAttribute('aria-label', 'Close menu');
+        }
+        if (backdrop) {
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.setAttribute('aria-hidden', 'false');
+        }
+        if (mobileMenu) {
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenu.setAttribute('aria-hidden', 'false');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        if (menuContent) menuContent.classList.add('opacity-0');
+        setTimeout(function () {
+          if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+          }
+          if (burgerIcon) burgerIcon.classList.remove('open');
+          if (burgerBtn) {
+            burgerBtn.setAttribute('aria-expanded', 'false');
+            burgerBtn.setAttribute('aria-label', 'Open menu');
+          }
+          if (backdrop) {
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            backdrop.setAttribute('aria-hidden', 'true');
+          }
+          document.body.style.overflow = '';
+        }, 300);
+      }
+
+      function toggleMobileMenu() {
+        var isOpen = mobileMenu && !mobileMenu.classList.contains('translate-x-full');
+        if (isOpen) closeMobileMenu();
+        else openMobileMenu();
+      }
+
+      if (burgerBtn) burgerBtn.addEventListener('click', toggleMobileMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+      if (backdrop) backdrop.addEventListener('click', closeMobileMenu);
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
+      document.querySelectorAll('.mobile-lang-option').forEach(function (btn) {
+        btn.addEventListener('click', closeMobileMenu);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMobileMenu();
+      });
+      window.addEventListener('resize', function () {
+        if (window.matchMedia('(min-width: 768px)').matches) {
+          closeMobileMenu();
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var toggle = document.getElementById('lang-toggle');
+      var menu = document.getElementById('lang-menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function (e) { e.stopPropagation(); menu.classList.toggle('hidden'); });
+      menu.addEventListener('click', function (e) { e.stopPropagation(); });
+      document.addEventListener('click', function () { menu.classList.add('hidden'); });
+    })();
+  </script>
+  <!-- Lightbox for gallery images (iPad/Desktop) -->
+  <div id="lightbox" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image view">
+    <button type="button" id="lightbox-close" class="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close lightbox">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] w-auto h-auto object-contain drop-shadow-2xl rounded-lg" />
+  </div>
+  <script>
+    (function () {
+      var triggers = document.querySelectorAll('.gallery-lightbox-trigger');
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var closeBtn = document.getElementById('lightbox-close');
+      if (!lightbox || !lightboxImg) return;
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      triggers.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          if (window.matchMedia('(min-width: 768px)').matches) {
+            e.preventDefault();
+            openLightbox(a.getAttribute('href'), a.getAttribute('data-alt'));
+          }
+        });
+      });
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    })();
+  </script>
+</body>
+
+</html>
