@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>malaga SLOW – Your tuk tuk in Málaga</title>
+  <title>malaga SLOW – Tu tuk-tuk en Málaga</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,7 +20,7 @@
   <style>
     @font-face {
       font-family: 'Gilroy';
-      src: url('fonts/gilroy-regular.ttf') format('truetype');
+      src: url('../fonts/gilroy-regular.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -28,7 +28,7 @@
 
     @font-face {
       font-family: 'Gilroy';
-      src: url('fonts/gilroy-semibold.ttf') format('truetype');
+      src: url('../fonts/gilroy-semibold.ttf') format('truetype');
       font-weight: 600;
       font-style: normal;
       font-display: swap;
@@ -99,9 +99,8 @@
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Tour cards: mobile-only layout and typography (max-width 767px) */
+    /* Tarjetas de tour: solo móvil (máx. 767px) */
     @media (max-width: 767px) {
-      /* #tours article h3 { font-size: 17px; } — removed so Tailwind !text-[22px] applies */
       #tours article .flex-col.flex-1 p {
         font-size: 16px;
       }
@@ -117,7 +116,6 @@
         font-size: 14px;
       }
 
-      /* Bottom row: tighter gap and no wrap so button + tags stay on one line */
       #tours article>div.flex.justify-between.items-center {
         gap: 0.5rem;
         flex-wrap: nowrap;
@@ -133,28 +131,28 @@
 
 <body class="antialiased">
   <main id="hero" class="relative h-[85vh] overflow-hidden">
-    <!-- Carousel background images -->
+    <!-- Imágenes de fondo del carrusel -->
     <div class="absolute inset-0">
-      <img src="img/Carousel_01.png" alt="Málaga Slow sunset hero"
+      <img src="../img/Carousel_01.png" alt="Málaga Slow al atardecer"
         class="hero-slide absolute inset-0 w-full h-[85vh] object-cover opacity-100 transition-opacity duration-[1500ms] ease-in-out" />
-      <img src="img/Carousel_02.png" alt="Málaga Slow carousel image 2"
+      <img src="../img/Carousel_02.png" alt="Imagen de carrusel de Málaga Slow 2"
         class="hero-slide absolute inset-0 w-full h-[85vh] object-cover opacity-0 transition-opacity duration-[1500ms] ease-in-out" />
-      <img src="img/Carousel_03.png" alt="Málaga Slow carousel image 3"
+      <img src="../img/Carousel_03.png" alt="Imagen de carrusel de Málaga Slow 3"
         class="hero-slide absolute inset-0 w-full h-[85vh] object-cover opacity-0 transition-opacity duration-[1500ms] ease-in-out" />
     </div>
-    <!-- Overlay oscuro para legibilidad del texto -->
+    <!-- Capa oscura para legibilidad -->
     <div class="absolute inset-0 bg-black/30 z-[0]" aria-hidden="true"></div>
-    <!-- Header: fixed top so it sits on top of hero without pushing content -->
+    <!-- Cabecera fija -->
     <header
       class="fixed top-0 w-full z-50 flex items-center justify-between px-6 md:px-10 lg:px-16 py-4 bg-transparent text-white transition-all duration-300 ease-in-out">
-      <a href="/" class="flex items-center">
-        <img src="img/Logo_Header.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
+      <a href="index.html" class="flex items-center">
+        <img src="../img/Logo_Header.png" alt="Logotipo Málaga Slow" class="h-10 w-auto object-contain" />
       </a>
-      <!-- Desktop nav: hidden on mobile -->
+      <!-- Navegación escritorio -->
       <nav class="hidden md:flex items-center gap-8">
         <a href="index.html#hero"
           class="relative group text-white font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
-          <span>Home</span>
+          <span>Inicio</span>
           <span
             class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
@@ -166,25 +164,25 @@
         </a>
         <a href="#about"
           class="relative group text-white font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
-          <span>About Us</span>
+          <span>Nosotros</span>
           <span
             class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
         <div class="flex items-center gap-4 ml-4 pl-4 border-l border-white/20">
-          <a href="es/index.html">
-            <img src="img/icons/spain_flag.svg"
+          <a href="#">
+            <img src="../img/icons/spain_flag.svg"
               class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
           </a>
-          <a href="#">
-            <img src="img/icons/uk_flag.svg"
+          <a href="../index.html">
+            <img src="../img/icons/uk_flag.svg"
               class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
           </a>
         </div>
       </nav>
-      <!-- Burger button: visible only on mobile -->
+      <!-- Botón burger móvil -->
       <button type="button" id="burger-btn"
         class="flex md:hidden items-center justify-center w-10 h-10 text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded-lg"
-        aria-expanded="false" aria-label="Open menu">
+        aria-expanded="false" aria-label="Abrir menú">
         <span class="burger-icon" aria-hidden="true">
           <span class="burger-line"></span>
           <span class="burger-line"></span>
@@ -193,80 +191,88 @@
       </button>
     </header>
 
-    <!-- Mobile menu backdrop and panel -->
+    <!-- Menú móvil -->
     <div id="mobile-menu-backdrop"
       class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
       aria-hidden="true"></div>
     <aside id="mobile-menu"
       class="fixed top-0 right-0 h-screen w-[320px] max-w-[85vw] bg-white z-[100] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 pb-8 px-8"
-      aria-label="Main menu" aria-hidden="true">
-      <button type="button" id="mobile-menu-close" aria-label="Close menu"
+      aria-label="Menú principal" aria-hidden="true">
+      <button type="button" id="mobile-menu-close" aria-label="Cerrar menú"
         class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#307EFF] focus:ring-offset-2 rounded-lg">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
       <div id="mobile-menu-content" class="transition-opacity duration-300 ease-out flex-1">
-        <nav class="flex flex-col text-left" aria-label="Mobile navigation">
+        <nav class="flex flex-col text-left" aria-label="Navegación móvil">
           <a href="index.html#hero"
-            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Home</a>
+            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Inicio</a>
           <a href="#tours"
             class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
           <a href="#about"
-            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
-          <a href="es/index.html"
-            class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</a>
+            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">
+            Nosotros</a>
           <a href="#"
+            class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Español</a>
+          <a href="../index.html"
             class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">English</a>
         </nav>
       </div>
     </aside>
 
-    <!-- Contenido central: título y botón -->
+    <!-- Contenido hero -->
     <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-[1]">
       <h1
         class="text-white font-semibold text-[36px] md:text-[40px] leading-tight tracking-[-0.04em] max-w-4xl mb-8 drop-shadow-sm">
         Skip the crowd
-        <span class="block font-normal text-[23px] md:text-[26px] lg:text-[26px]">your tuk-tuk in málaga</span>
+        <span class="block font-normal text-[23px] md:text-[26px] lg:text-[26px]">tu tuk-tuk en Málaga</span>
       </h1>
       <a href="#tours"
         class="inline-block bg-[#307EFF] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform transition-transform duration-300 ease-in-out hover:scale-105">
-        Our tours
+        Nuestros tours
       </a>
     </div>
   </main>
 
-  <!-- Experience section (Figma: 12-col grid, margin 24, gutter 24) -->
+  <!-- Sección experiencia -->
   <section id="booking" class="bg-white pt-40 pb-0 md:pb-24">
     <div class="max-w-7xl mx-auto px-8 flex flex-col items-center">
       <h2
         class="experience-reveal text-center text-[#1E1E1E] text-[36px] md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] max-w-xl opacity-0 translate-y-4 transition-all duration-700">
-        Experience the<br>
-        all round city
+        Vive la experiencia<br>
+        de la ciudad redonda
       </h2>
       <p class="experience-reveal mt-[50px] max-w-[600px] mx-auto text-center text-gray-600 text-lg font-normal tracking-[-0.05em] leading-[1.35] opacity-0 translate-y-4 transition-all duration-700"
         style="text-wrap: balance;">
-        Discover the charm of Málaga. Our private electric vehicle tour allows you to access the most hidden corners of the historic center, where tour buses simply cannot reach. A comfortable, private experience, perfect for families.
+        Descubre el encanto de Málaga. Nuestro tour privado en vehículo eléctrico te permite acceder a los rincones
+        más conocidos de la ciudad redonda, donde los autobuses turísticos no pueden llegar. Una experiencia cómoda y
+        privada, perfecta para familias.
       </p>
     </div>
 
-    <!-- Our tours block: gray background, cards only -->
+    <!-- Nuestros tours -->
     <div class="w-full bg-[#F3F4F6] mt-[240px] py-16 pb-40 md:pb-16">
       <div class="max-w-7xl mx-auto px-6 md:px-8">
-        <h2 class="text-left text-[#1E1E1E] text-[36px] md:text-[36px] tracking-[-0.04em] font-bold mb-8 md:mb-10">Our tours</h2>
+        <h2 class="text-left text-[#1E1E1E] text-[36px] md:text-[36px] tracking-[-0.04em] font-bold mb-8 md:mb-10">
+          Nuestros tours</h2>
         <div id="tours"
           class="grid grid-cols-1 gap-8 items-stretch md:flex md:flex-row md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
-          <!-- Card 1: Standard Tour -->
+          <!-- Tarjeta 1: Tour Standard -->
           <article
             class="max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
               <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
-                <img src="img/Art_Culture_Card.png" alt="Art & Culture tour" class="w-full h-full object-cover" />
+                <img src="../img/Art_Culture_Card.png" alt="Tour Standard por Málaga" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Standard</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This tour blends the city’s lush gardens with its modern waterfront and historic heights, offering a complete perspective of our Mediterranean lifestyle.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Descubre la belleza de Málaga en 60 minutos. Este tour combina los jardines
+                de la ciudad con su moderno paseo marítimo y sus vistas panorámicas, ofreciendo una perspectiva completa
+                de nuestro estilo de vida mediterráneo.
+              </p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
@@ -274,21 +280,24 @@
                 <span class="bg-gray-200 text-black text-sm font-semibold px-3 py-1.5 rounded-lg">30 € / pax</span>
               </div>
               <a href="standard-tour.html"
-                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">Book
-                now</a>
+                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">
+                Reserva</a>
             </div>
           </article>
-          <!-- Card 2: Tour Express -->
+          <!-- Tarjeta 2: Tour Express -->
           <article
             class="max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
               <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
-                <img src="img/Coastal_Tour_card.png" alt="Coastal Escape tour" class="w-full h-full object-cover" />
+                <img src="../img/Coastal_Tour_card.png" alt="Tour Express por la costa" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Express</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">Cruise through the coastal charm of La Malagueta and the elegant El Limonar on your way to the stunning Gibralfaro Viewpoint. The quickest way to capture Málaga’s most iconic skyline.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Pasea por el encanto costero de La Malagueta y la elegancia de El Limonar hasta llegar al mirador de Gibralfaro. La
+                forma más rápida de disfrutar del skyline más icónico de Málaga.
+              </p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
@@ -296,21 +305,24 @@
                 <span class="bg-gray-200 text-black text-sm font-semibold px-3 py-1.5 rounded-lg">20 € / pax</span>
               </div>
               <a href="express-tour.html"
-                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">Book
-                now</a>
+                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">
+                Reserva</a>
             </div>
           </article>
-          <!-- Card 3: Tour Premium -->
+          <!-- Tarjeta 3: Tour Premium -->
           <article
             class="max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
               <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
-                <img src="img/Oldtown_Tour_Card.png" alt="Old Town tour" class="w-full h-full object-cover" />
+                <img src="../img/Oldtown_Tour_Card.png" alt="Tour Premium por el casco antiguo" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Premium</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This premium experience is designed for discovery, featuring strategic stops at the best viewpoints to capture unforgettable photographs.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Los monumentos más emblemáticos y las mejores vistas de la ciudad. Una experiencia diseñada para descubrir
+                Málaga con paradas estratégicas en los spots más especiales para tus fotografías.
+              </p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
@@ -318,8 +330,8 @@
                 <span class="bg-gray-200 text-black text-sm font-semibold px-3 py-1.5 rounded-lg">35 € / pax</span>
               </div>
               <a href="premium-tour.html"
-                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">Book
-                now</a>
+                class="bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shrink-0">
+                Reserva</a>
             </div>
           </article>
         </div>
@@ -327,60 +339,68 @@
     </div>
   </section>
 
-  <!-- Mid-section image (grid-aligned) -->
+  <!-- Imagen intermedia -->
   <section class="w-full bg-white py-24 my-40 hidden md:block">
     <div class="max-w-7xl mx-auto px-8 overflow-hidden">
-      <img src="img/malaga_turistica.png" alt="Málaga turístico"
+      <img src="../img/malaga_turistica.png" alt="Málaga turística"
         class="w-full object-cover rounded-lg transition-transform duration-1000 ease-out hover:scale-105 md:h-[420px] lg:h-[620px]" />
     </div>
   </section>
 
-  <!-- About / We were born section -->
+  <!-- Sección sobre nosotros -->
   <section id="about" class="w-full bg-white md:bg-[#F3F4F6] pt-0 mt-0 pb-40 md:py-40">
     <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-[2fr_2fr] gap-20 items-center">
       <div
         class="mx-auto max-w-[600px] order-2 md:order-1 text-center md:text-left opacity-0 translate-y-10 transition-all duration-1000 ease-out about-reveal">
         <p class="text-lg leading-[1.35] tracking-[-0.06em] text-gray-800">
-          We believe that the best way to experience a city is through its soul. We are locals dedicated to sharing the most iconic landmarks and the rich history of Málaga, from the Roman Theatre to the majestic Alcazaba. Our private tours are designed for those who want to understand the city's heritage.
+          Creemos que la mejor manera de conocer una ciudad es a través de su alma. Somos gente local, apasionada por
+          compartir los rincones más icónicos y la historia de Málaga, desde el Teatro Romano hasta la majestuosa
+          Alcazaba. Nuestros tours privados están pensados para quienes quieren entender el patrimonio de la ciudad.
+          
         </p>
         <a href="#tours"
           class="inline-block mt-8 bg-[#307EFF] text-white font-semibold rounded-full px-8 py-3 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg block mx-auto md:inline-block md:mx-0">
-          Our tours</a>
+          Nuestros tours</a>
       </div>
       <div
         class="order-1 md:order-2 -mx-8 md:mx-0 opacity-0 translate-y-10 transition-all duration-1000 ease-out about-reveal">
-        <img src="img/Catedral_Section_02.png" alt="Málaga Cathedral and city"
+        <img src="../img/Catedral_Section_02.png" alt="Catedral de Málaga y ciudad"
           class="w-full h-[70vh] md:h-[345px] lg:h-auto object-cover rounded-none md:rounded-lg" />
       </div>
     </div>
   </section>
 
-  <!-- Guest Reviews section -->
+  <!-- Opiniones de clientes -->
   <section class="w-full bg-white py-24 pb-32 mt-24">
     <div class="max-w-7xl mx-auto px-8">
-      <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black mb-8 md:mb-16">Guest Reviews</h2>
+      <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black mb-8 md:mb-16">Guest reviews</h2>
       <div
         class="flex flex-row overflow-x-auto snap-x snap-mandatory gap-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <article class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:w-[320px]">
           <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">The best way to see Málaga! Our driver was so
-            kind and knew everything about the city history.</p>
+          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">
+            La mejor forma de ver Málaga. Nuestro conductor fue muy amable y conocía a la perfección la historia de la
+            ciudad.
+          </p>
           <p class="font-bold text-gray-900">Sarah M.</p>
-          <p class="text-xs text-gray-400">Google Review</p>
+          <p class="text-xs text-gray-400">Reseña en Google</p>
         </article>
         <article class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:w-[320px]">
           <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">Absolutely loved the Old Town tour. So much
-            more personal than a big bus. Can't recommend enough!</p>
+          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">
+            Nos encantó el tour por el casco antiguo. Mucho más personal que un autobús grande. ¡Muy recomendable!
+          </p>
           <p class="font-bold text-gray-900">James & Laura</p>
-          <p class="text-xs text-gray-400">Google Review</p>
+          <p class="text-xs text-gray-400">Reseña en Google</p>
         </article>
         <article class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:w-[320px]">
           <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">We did the coastal route—stunning views and
-            our guide shared the best spots for espetos. Perfect day.</p>
+          <p class="text-gray-700 leading-relaxed mb-6 tracking-[-0.06em]">
+            Hicimos la ruta costera: vistas impresionantes y recomendaciones locales para probar los mejores espetos.
+            Un día perfecto.
+          </p>
           <p class="font-bold text-gray-900">Elena K.</p>
-          <p class="text-xs text-gray-400">Google Review</p>
+          <p class="text-xs text-gray-400">Reseña en Google</p>
         </article>
       </div>
     </div>
@@ -389,7 +409,7 @@
   <!-- Footer -->
   <footer class="bg-[#1E1E1E] text-[#FFFFFF] py-6 px-8 md:py-16 md:px-16 md:text-[16px]">
     <div class="max-w-[1440px] mx-auto">
-      <!-- Mobile: three-column grid (top) + centered branding (bottom) -->
+      <!-- Móvil -->
       <div class="grid grid-cols-3 gap-x-1 gap-y-6 text-left md:hidden">
         <div class="flex flex-col space-y-2 min-w-0 break-words">
           <a href="tel:+34658451301" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">+34
@@ -401,20 +421,22 @@
           <a href="https://wa.me/34658451301?text=Hola%20Málaga%20Slow!%20Me%20gustaría%20pedir%20información%20sobre%20un%20tour." target="_blank" rel="noopener noreferrer" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">WhatsApp</a>
         </div>
         <div class="flex flex-col items-center space-y-2 min-w-0 break-words">
-          <a href="#" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Privacy Policy</a>
-          <a href="#" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Cookie Policy</a>
+          <a href="#" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Política de
+            privacidad</a>
+          <a href="#" class="text-[12px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Política de
+            cookies</a>
         </div>
       </div>
       <div class="flex flex-col items-center justify-center mt-8 py-4 md:hidden">
-        <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-6 w-auto object-contain" />
-        <p class="text-[#FFFFFF] text-[10px] mt-1.5">© 2026 All Rights Reserved</p>
+        <img src="../img/Logo_footer.png" alt="Logotipo Málaga Slow" class="h-6 w-auto object-contain" />
+        <p class="text-[#FFFFFF] text-[10px] mt-1.5">© 2026 Todos los derechos reservados</p>
       </div>
 
-      <!-- Desktop: original horizontal layout (logo left, three columns right) -->
+      <!-- Escritorio -->
       <div class="hidden md:flex md:flex-row md:items-start md:justify-between md:gap-12">
         <div class="flex flex-col space-y-2">
-          <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-8 w-auto object-contain" />
-          <p class="text-[#FFFFFF] text-sm">© 2026 All Rights Reserved</p>
+          <img src="../img/Logo_footer.png" alt="Logotipo Málaga Slow" class="h-8 w-auto object-contain" />
+          <p class="text-[#FFFFFF] text-sm">© 2026 Todos los derechos reservados</p>
         </div>
         <div class="flex flex-row items-start gap-10 lg:gap-20">
           <div class="flex flex-col space-y-2">
@@ -426,8 +448,8 @@
             <a href="mailto:info@malagaslow.com" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">info@malagaslow.com</a>
           </div>
           <div class="flex flex-col space-y-2">
-            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Privacy Policy</a>
-            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Cookie Policy</a>
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Política de privacidad</a>
+            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Política de cookies</a>
           </div>
         </div>
       </div>
@@ -474,7 +496,7 @@
         if (burgerIcon) burgerIcon.classList.add('open');
         if (burgerBtn) {
           burgerBtn.setAttribute('aria-expanded', 'true');
-          burgerBtn.setAttribute('aria-label', 'Close menu');
+          burgerBtn.setAttribute('aria-label', 'Cerrar menú');
         }
         if (backdrop) {
           backdrop.classList.remove('opacity-0', 'pointer-events-none');
@@ -499,7 +521,7 @@
           if (burgerIcon) burgerIcon.classList.remove('open');
           if (burgerBtn) {
             burgerBtn.setAttribute('aria-expanded', 'false');
-            burgerBtn.setAttribute('aria-label', 'Open menu');
+            burgerBtn.setAttribute('aria-label', 'Abrir menú');
           }
           if (backdrop) {
             backdrop.classList.add('opacity-0', 'pointer-events-none');
@@ -542,7 +564,6 @@
 
       let current = 0;
 
-      // Ensure initial state
       slides.forEach((slide, index) => {
         if (index === 0) {
           slide.classList.add('opacity-100');
@@ -572,7 +593,6 @@
 
       const heroHeight = hero.offsetHeight;
       const navLinks = header.querySelectorAll('nav a');
-      const langToggle = document.getElementById('lang-toggle');
 
       const useBlue = window.scrollY > (heroHeight - 80);
 
@@ -596,26 +616,6 @@
         }
       });
 
-      if (langToggle) {
-        const langUnderline = langToggle.querySelector('.nav-underline');
-
-        if (useBlue) {
-          langToggle.classList.remove('text-white');
-          langToggle.classList.add('text-[#307EFF]');
-          if (langUnderline) {
-            langUnderline.classList.remove('bg-white');
-            langUnderline.classList.add('bg-[#307EFF]');
-          }
-        } else {
-          langToggle.classList.add('text-white');
-          langToggle.classList.remove('text-[#307EFF]');
-          if (langUnderline) {
-            langUnderline.classList.add('bg-white');
-            langUnderline.classList.remove('bg-[#307EFF]');
-          }
-        }
-      }
-
       const burgerBtn = document.getElementById('burger-btn');
       if (burgerBtn) {
         if (useBlue) {
@@ -626,29 +626,6 @@
           burgerBtn.classList.remove('text-[#307EFF]');
         }
       }
-    }
-
-    function setupLanguageDropdown() {
-      const toggle = document.getElementById('lang-toggle');
-      const menu = document.getElementById('lang-menu');
-      if (!toggle || !menu) return;
-
-      function closeMenu() {
-        menu.classList.add('hidden');
-      }
-
-      toggle.addEventListener('click', function (event) {
-        event.stopPropagation();
-        menu.classList.toggle('hidden');
-      });
-
-      menu.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-
-      document.addEventListener('click', function () {
-        closeMenu();
-      });
     }
 
     function setupExperienceReveal() {
@@ -695,7 +672,6 @@
     window.addEventListener('load', function () {
       setupHeroCarousel();
       updateHeaderMenuColors();
-      setupLanguageDropdown();
       setupExperienceReveal();
       setupAboutReveal();
     });
@@ -703,3 +679,4 @@
 </body>
 
 </html>
+

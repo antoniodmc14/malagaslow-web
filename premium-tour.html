@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coastal Escape | MálagaSlow</title>
+  <title>Tour Premium | Málaga Slow</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -166,23 +166,15 @@
         <span
           class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <div class="relative">
-        <button type="button" id="lang-toggle"
-          class="relative group flex items-center gap-1 text-[#307EFF] font-medium tracking-[-0.02em] cursor-pointer focus:outline-none transition-colors duration-300 py-1">
-          <span>En</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-          <span
-            class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
-        </button>
-        <div id="lang-menu"
-          class="hidden absolute right-0 mt-3 w-[97px] h-[94px] bg-white rounded-[24px] overflow-hidden shadow-xl flex flex-col divide-y divide-gray-200">
-          <button type="button"
-            class="w-full h-full flex-1 px-3 text-center text-[13px] font-normal text-[#307EFF] hover:bg-gray-50 transition-colors duration-300">Spanish</button>
-          <button type="button"
-            class="w-full h-full flex-1 px-3 text-center text-[13px] font-normal text-[#307EFF] hover:bg-gray-50 transition-colors duration-300">English</button>
-        </div>
+      <div class="flex items-center gap-4 ml-4 pl-4 border-l border-[#307EFF]/20">
+        <a href="es/premium-tour.html">
+          <img src="img/icons/spain_flag.svg"
+            class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
+        </a>
+        <a href="#">
+          <img src="img/icons/uk_flag.svg"
+            class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
+        </a>
       </div>
     </nav>
 
@@ -214,15 +206,15 @@
     <div id="mobile-menu-content" class="transition-opacity duration-300 ease-out flex-1">
       <nav class="flex flex-col text-left" aria-label="Mobile navigation">
         <a href="index.html#hero"
-          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">Home</a>
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Home</a>
         <a href="index.html#tours"
-          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
         <a href="index.html#about"
-          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-semibold leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
-        <button type="button"
-          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</button>
-        <button type="button"
-          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">English</button>
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
+        <a href="es/index.html"
+          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</a>
+        <a href="#"
+          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">English</a>
       </nav>
     </div>
   </aside>
@@ -231,27 +223,23 @@
     <div class="grid grid-cols-1 gap-12 lg:flex lg:items-stretch lg:gap-12">
       <!-- Left column (60%) -->
       <div class="space-y-12 lg:w-[60%] lg:flex-shrink-0 lg:min-w-0">
-        <div class="max-w-xl">
-          <h1 class="text-[#1E1E1E] text-4xl md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] mb-4">Coastal Escape
-          </h1>
+        <div class="max-w-[400px] md:max-w-xl mx-auto md:mx-0">
+          <h1 class="text-[#1E1E1E] text-4xl md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] mb-4">
+            Premium Tour</h1>
           <div class="w-full h-px bg-[#307EFF]/30 mb-4" aria-hidden="true"></div>
           <p class="text-[#1E1E1E] text-base md:text-lg !leading-[1.3rem] md:!leading-[1.5rem] tracking-[-0.04em]">
-            Discover Málaga’s authentic coast. We’ll glide you through the old fishing quarter's charming houses in
-            Pedregalejo and El Palo, where the sea breeze meets the local tradition of the Mediterranean shores at a
-            gentle, unhurried pace. Experience the unique atmosphere of the traditional 'espeteros' at work, explore the
-            hidden promenade corners, and enjoy the serene maritime landscape that tourists rarely get to see from the
-            busy city center.
+            Glide effortlessly in our eco-friendly tuk-tuk as an expert guide reveals Málaga’s most iconic landmarks.<br><br> This premium experience features strategic stops at top viewpoints for unforgettable photos. Discover the City Hall, Paseo del Parque, and the emblematic Calle Larios. We’ll cruise by the Pompidou Museum, La Farola, and La Malagueta beach before heading through El Limonar to the breathtaking Gibralfaro Viewpoint. The journey concludes at the historic Bullring and the vibrant Plaza de la Merced.
           </p>
         </div>
 
         <!-- Time and price info tags (informational only) -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 max-w-[400px] mx-auto md:mx-0">
           <span class="info-tag" aria-label="Duration: 90 minutes"><span class="info-tag-text">90 min</span></span>
-          <span class="info-tag" aria-label="Price: 120 euros"><span class="info-tag-text">120 €</span></span>
+          <span class="info-tag" aria-label="Price: 110 euros"><span class="info-tag-text">35 € / pax</span></span>
         </div>
 
         <!-- Info grid: Water, Capacity, Safety (with blue vertical dividers) -->
-        <div class="max-w-xl pb-2">
+        <div class="max-w-[400px] md:max-w-xl pb-2 mx-auto md:mx-0">
           <div
             class="flex flex-col sm:flex-row gap-4 sm:gap-0 divide-y sm:divide-y-0 sm:divide-x divide-[#307EFF]/30 mb-12 pt-2">
             <div class="flex-1 flex flex-col pl-0 pr-4 sm:px-0 sm:pr-4">
@@ -308,29 +296,29 @@
       <div class="h-full flex flex-col gap-6 lg:w-[40%] lg:flex-shrink-0 lg:min-w-0 lg:h-full lg:min-h-[500px]">
         <div class="flex-1 min-h-0 hidden md:flex md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-4 lg:grid lg:grid-cols-[1.2fr_1fr] lg:grid-rows-[1fr_1fr] lg:gap-4 lg:w-full lg:h-full">
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:row-span-2 lg:h-full lg:w-full lg:rounded-xl">
-            <a href="img/Balneario.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Málaga coast and fishing quarter">
-              <img src="img/Balneario.png" alt="Málaga coast and fishing quarter" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/Catedral_oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Málaga Cathedral and historic centre">
+              <img src="img/Catedral_oldtown.png" alt="Málaga Cathedral and historic centre" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="img/Espeto.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Old fishing quarter and Mediterranean shores">
-              <img src="img/Espeto.png" alt="Old fishing quarter and Mediterranean shores" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/Teatro_oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Roman Theatre and Alcazaba surroundings">
+              <img src="img/Teatro_oldtown.png" alt="Roman Theatre and Alcazaba surroundings" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="img/Barca.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Coastal Escape sea and beach views">
-              <img src="img/Barca.png" alt="Coastal Escape sea and beach views" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/Fuente_oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Old Town streets and fountain">
+              <img src="img/Fuente_oldtown.png" alt="Old Town streets and fountain" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
         </div>
 
-        <div class="bg-white border border-gray-200 rounded-lg p-6 flex gap-4 md:max-w-[576px] md:mx-auto">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 flex gap-4 max-w-[400px] mx-auto md:max-w-[576px] md:mx-0">
           <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#307EFF] flex items-center justify-center">
             <span class="text-white font-bold text-lg">!</span>
           </div>
           <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em]">
-            If you need to cancel, please let us know at least <strong>48 hours in advance</strong> for a full refund.
-            Cancellations made within 48 hours of the scheduled tour will not be eligible for reimbursement.
+            If you need to cancel, please let us know at least <strong>24 hours in advance</strong> for a full refund.
+            Cancellations made within 24 hours of the scheduled tour will not be eligible for reimbursement.
           </p>
         </div>
       </div>
@@ -343,18 +331,15 @@
       <!-- Mobile: three-column grid (top) + centered branding (bottom) -->
       <div class="grid grid-cols-3 gap-x-1 gap-y-6 text-left md:hidden">
         <div class="flex flex-col space-y-2 min-w-0 break-words">
-          <a href="tel:+34600123456" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">+34
-            600 123 456</a>
-          <a href="mailto:info@malagaslow.com"
-            class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">info@malagaslow.com</a>
+          <a href="tel:+34658451301" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">+34
+            658 451 301</a>
+          <a href="mailto:info@malagaslow.com" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">info@malagaslow.com</a>
         </div>
         <div class="flex flex-col space-y-2 min-w-0 break-words text-center">
-          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Instagram</a>
-          <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">WhatsApp</a>
+          <a href="https://www.instagram.com/malagaslow/" target="_blank" rel="noopener noreferrer" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Instagram</a>
+          <a href="https://wa.me/34658451301?text=Hola%20Málaga%20Slow!%20Me%20gustaría%20pedir%20información%20sobre%20un%20tour." target="_blank" rel="noopener noreferrer" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">WhatsApp</a>
         </div>
-        <div class="flex flex-col space-y-2 min-w-0 break-words">
-          <button type="button"
-            class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer text-left break-words">Language</button>
+        <div class="flex flex-col items-center space-y-2 min-w-0 break-words">
           <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Privacy Policy</a>
           <a href="#" class="text-[10px] text-[#FFFFFF] hover:underline cursor-pointer break-words">Cookie Policy</a>
         </div>
@@ -372,18 +357,14 @@
         </div>
         <div class="flex flex-row items-start gap-10 lg:gap-20">
           <div class="flex flex-col space-y-2">
-            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Instagram</a>
-            <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">WhatsApp</a>
+            <a href="https://www.instagram.com/malagaslow/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Instagram</a>
+            <a href="https://wa.me/34658451301?text=Hola%20Málaga%20Slow!%20Me%20gustaría%20pedir%20información%20sobre%20un%20tour." target="_blank" rel="noopener noreferrer" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">WhatsApp</a>
           </div>
           <div class="flex flex-col space-y-2">
-            <a href="tel:+34600123456" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">+34 600 123 456</a>
-            <a href="mailto:info@malagaslow.com"
-              class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">info@malagaslow.com</a>
+            <a href="tel:+34658451301" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">+34 658 451 301</a>
+            <a href="mailto:info@malagaslow.com" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">info@malagaslow.com</a>
           </div>
           <div class="flex flex-col space-y-2">
-            <button type="button" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer text-left">
-              Language
-            </button>
             <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Privacy Policy</a>
             <a href="#" class="text-sm text-[#FFFFFF] hover:underline cursor-pointer">Cookie Policy</a>
           </div>
