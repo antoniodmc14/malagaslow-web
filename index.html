@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>malaga SLOW – Your tuk tuk in Málaga</title>
+  <link rel="icon" type="image/png" href="img/Favicon_malagaslow.png">
+  <link rel="apple-touch-icon" href="img/Favicon_malagaslow.png">
+  <title>malagaslow - Your tuk tuk in Málaga</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -151,6 +153,7 @@
 
     /* Tour cards: mobile-only layout and typography (max-width 767px) */
     @media (max-width: 767px) {
+
       /* #tours article h3 { font-size: 17px; } — removed so Tailwind !text-[22px] applies */
       #tours article .flex-col.flex-1 p {
         font-size: 16px;
@@ -263,7 +266,8 @@
           <a href="#tours"
             class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
           <a href="#about"
-            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
+            class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">About
+            Us</a>
           <a href="es/index.html"
             class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</a>
           <a href="#"
@@ -296,14 +300,17 @@
       </h2>
       <p class="experience-reveal mt-[50px] max-w-[600px] mx-auto text-center text-gray-600 text-lg font-normal tracking-[-0.04em] leading-[1.35] opacity-0 translate-y-4 transition-all duration-700"
         style="text-wrap: balance;">
-        Discover the charm of Malaga. Our private tour in an electric vehicle allows you to access the most well-known corners of the all round city, where tour buses cannot reach. A comfortable and private experience, perfect for families.
+        Discover the charm of Malaga. Our private tour in an electric vehicle allows you to access the most well-known
+        corners of the all round city, where tour buses cannot reach. A comfortable and private experience, perfect for
+        families.
       </p>
     </div>
 
     <!-- Our tours block: gray background, cards only -->
     <div class="w-full bg-[#F3F4F6] mt-[240px] py-16 pb-40 md:pb-16">
       <div class="max-w-7xl mx-auto px-6 md:px-8">
-        <h2 class="text-left text-[#1E1E1E] text-[36px] md:text-[36px] tracking-[-0.04em] font-bold mb-8 md:mb-10">Our tours</h2>
+        <h2 class="text-left text-[#1E1E1E] text-[36px] md:text-[36px] tracking-[-0.04em] font-bold mb-8 md:mb-10">Our
+          tours</h2>
         <div id="tours"
           class="scroll-mt-24 grid grid-cols-1 gap-8 items-stretch md:flex md:flex-row md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
           <!-- Card 1: Standard Tour -->
@@ -311,12 +318,14 @@
             class="relative cursor-pointer max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
               <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
-                <img src="img/Art_Culture_Card.png" alt="Art & Culture tour" class="w-full h-full object-cover" />
+                <img src="img/Tour_Standard_Card.png" alt="Art & Culture tour" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Standard</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This tour blends the city’s lush gardens with its modern waterfront and historic heights, offering a complete perspective of our Mediterranean lifestyle.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This tour blends the city’s
+                lush gardens with its modern waterfront and historic heights, offering a complete perspective of our
+                Mediterranean lifestyle.</p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
@@ -324,7 +333,8 @@
                 <span class="info-tag"><span class="info-tag-text">30 € / pax</span></span>
               </div>
               <a href="standard-tour.html"
-                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More info</a>
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More
+                info</a>
             </div>
             <a href="standard-tour.html" class="absolute inset-0 z-10" aria-label="Open Tour Standard page"></a>
           </article>
@@ -338,7 +348,9 @@
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Express</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">Cruise through the coastal charm of La Malagueta and the elegant El Limonar on your way to the stunning Gibralfaro Viewpoint. The quickest way to capture Málaga’s most iconic skyline.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">Cruise through the coastal
+                charm of La Malagueta and the elegant El Limonar on your way to the stunning Gibralfaro Viewpoint. The
+                quickest way to capture Málaga’s most iconic skyline.</p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
@@ -346,7 +358,8 @@
                 <span class="info-tag"><span class="info-tag-text">20 € / pax</span></span>
               </div>
               <a href="express-tour.html"
-                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More info</a>
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More
+                info</a>
             </div>
             <a href="express-tour.html" class="absolute inset-0 z-10" aria-label="Open Tour Express page"></a>
           </article>
@@ -360,15 +373,18 @@
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
               <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Premium</h3>
-              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This premium experience is designed for discovery, featuring strategic stops at the best viewpoints to capture unforgettable photographs.</p>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">This premium experience is
+                designed for discovery, featuring strategic stops at the best viewpoints to capture unforgettable
+                photographs.</p>
             </div>
             <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
               <div class="flex items-center gap-2">
                 <span class="info-tag"><span class="info-tag-text">90 min</span></span>
-                <span class="info-tag"><span class="info-tag-text">35 € / pax</span></span>
+                <span class="info-tag"><span class="info-tag-text">40 € / pax</span></span>
               </div>
               <a href="premium-tour.html"
-                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More info</a>
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">More
+                info</a>
             </div>
             <a href="premium-tour.html" class="absolute inset-0 z-10" aria-label="Open Tour Premium page"></a>
           </article>
@@ -391,9 +407,14 @@
       <div
         class="mx-auto max-w-[600px] md:max-w-none md:flex-1 md:min-w-0 order-2 md:order-1 text-center md:text-left opacity-0 translate-y-10 transition-all duration-1000 ease-out about-reveal">
         <p class="text-lg leading-[1.35] tracking-[-0.04em] text-gray-800">
-          Málaga Slow is the personal project of Marcos and Jose, two lifelong friends united by a shared passion: our city.<br><br>
+          Málaga Slow is the personal project of Marcos and Jose, two lifelong friends united by a shared passion: our
+          city.<br><br>
 
-We are convinced that the best way to discover Malaga is not from a bus window, but through the eyes of those of us who grew up in its streets. We want to show you the soul of our land from a different perspective, combining the comfort of our electric vehicles with the closeness and professionalism you deserve. From the most iconic corners to those secrets that only locals know, we are here so that you don't just see the city, but so that you feel it and understand it just as we live it.
+          We are convinced that the best way to discover Malaga is not from a bus window, but through the eyes of those
+          of us who grew up in its streets. We want to show you the soul of our land from a different perspective,
+          combining the comfort of our electric vehicles with the closeness and professionalism you deserve. From the
+          most iconic corners to those secrets that only locals know, we are here so that you don't just see the city,
+          but so that you feel it and understand it just as we live it.
         </p>
         <a href="#tours"
           class="inline-block mt-8 bg-[#307EFF] text-white font-semibold rounded-full px-8 py-3 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg block mx-auto md:inline-block md:mx-0">
@@ -410,7 +431,8 @@ We are convinced that the best way to discover Malaga is not from a bus window, 
   <!-- Guest Reviews section -->
   <section class="w-full bg-white py-18 pb-32 mt-24">
     <div class="max-w-7xl mx-auto px-8">
-      <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black mb-8 md:mb-16">Guest Reviews</h2>
+      <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black mb-8 md:mb-16">Guest Reviews
+      </h2>
       <div
         class="flex flex-row overflow-x-auto snap-x snap-mandatory gap-8 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <article
@@ -507,79 +529,79 @@ We are convinced that the best way to discover Malaga is not from a bus window, 
   </footer>
 
   <script>
-    (function () {
-      var burgerBtn = document.getElementById('burger-btn');
-      var burgerIcon = burgerBtn && burgerBtn.querySelector('.burger-icon');
-      var backdrop = document.getElementById('mobile-menu-backdrop');
-      var mobileMenu = document.getElementById('mobile-menu');
-      var menuContent = document.getElementById('mobile-menu-content');
-      var mobileLinks = document.querySelectorAll('.mobile-nav-link');
-      var closeBtn = document.getElementById('mobile-menu-close');
+      (function () {
+        var burgerBtn = document.getElementById('burger-btn');
+        var burgerIcon = burgerBtn && burgerBtn.querySelector('.burger-icon');
+        var backdrop = document.getElementById('mobile-menu-backdrop');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var menuContent = document.getElementById('mobile-menu-content');
+        var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        var closeBtn = document.getElementById('mobile-menu-close');
 
-      function openMobileMenu() {
-        if (menuContent) menuContent.classList.remove('opacity-0');
-        if (burgerIcon) burgerIcon.classList.add('open');
-        if (burgerBtn) {
-          burgerBtn.setAttribute('aria-expanded', 'true');
-          burgerBtn.setAttribute('aria-label', 'Close menu');
-        }
-        if (backdrop) {
-          backdrop.classList.remove('opacity-0', 'pointer-events-none');
-          backdrop.setAttribute('aria-hidden', 'false');
-        }
-        if (mobileMenu) {
-          mobileMenu.classList.remove('translate-x-full');
-          mobileMenu.classList.add('translate-x-0');
-          mobileMenu.setAttribute('aria-hidden', 'false');
-        }
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMobileMenu() {
-        if (menuContent) menuContent.classList.add('opacity-0');
-        setTimeout(function () {
-          if (mobileMenu) {
-            mobileMenu.classList.remove('translate-x-0');
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-          }
-          if (burgerIcon) burgerIcon.classList.remove('open');
+        function openMobileMenu() {
+          if (menuContent) menuContent.classList.remove('opacity-0');
+          if (burgerIcon) burgerIcon.classList.add('open');
           if (burgerBtn) {
-            burgerBtn.setAttribute('aria-expanded', 'false');
-            burgerBtn.setAttribute('aria-label', 'Open menu');
+            burgerBtn.setAttribute('aria-expanded', 'true');
+            burgerBtn.setAttribute('aria-label', 'Close menu');
           }
           if (backdrop) {
-            backdrop.classList.add('opacity-0', 'pointer-events-none');
-            backdrop.setAttribute('aria-hidden', 'true');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.setAttribute('aria-hidden', 'false');
           }
-          document.body.style.overflow = '';
-        }, 300);
-      }
-
-      function toggleMobileMenu() {
-        var isOpen = mobileMenu && !mobileMenu.classList.contains('translate-x-full');
-        if (isOpen) closeMobileMenu();
-        else openMobileMenu();
-      }
-
-      if (burgerBtn) burgerBtn.addEventListener('click', toggleMobileMenu);
-      if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
-      if (backdrop) backdrop.addEventListener('click', closeMobileMenu);
-      mobileLinks.forEach(function (link) {
-        link.addEventListener('click', closeMobileMenu);
-      });
-      document.querySelectorAll('.mobile-lang-option').forEach(function (btn) {
-        btn.addEventListener('click', closeMobileMenu);
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMobileMenu();
-      });
-      window.addEventListener('resize', function () {
-        if (window.matchMedia('(min-width: 768px)').matches) {
-          closeMobileMenu();
+          if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+          }
+          document.body.style.overflow = 'hidden';
         }
-      });
-    })();
+
+        function closeMobileMenu() {
+          if (menuContent) menuContent.classList.add('opacity-0');
+          setTimeout(function () {
+            if (mobileMenu) {
+              mobileMenu.classList.remove('translate-x-0');
+              mobileMenu.classList.add('translate-x-full');
+              mobileMenu.setAttribute('aria-hidden', 'true');
+            }
+            if (burgerIcon) burgerIcon.classList.remove('open');
+            if (burgerBtn) {
+              burgerBtn.setAttribute('aria-expanded', 'false');
+              burgerBtn.setAttribute('aria-label', 'Open menu');
+            }
+            if (backdrop) {
+              backdrop.classList.add('opacity-0', 'pointer-events-none');
+              backdrop.setAttribute('aria-hidden', 'true');
+            }
+            document.body.style.overflow = '';
+          }, 300);
+        }
+
+        function toggleMobileMenu() {
+          var isOpen = mobileMenu && !mobileMenu.classList.contains('translate-x-full');
+          if (isOpen) closeMobileMenu();
+          else openMobileMenu();
+        }
+
+        if (burgerBtn) burgerBtn.addEventListener('click', toggleMobileMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMobileMenu);
+        mobileLinks.forEach(function (link) {
+          link.addEventListener('click', closeMobileMenu);
+        });
+        document.querySelectorAll('.mobile-lang-option').forEach(function (btn) {
+          btn.addEventListener('click', closeMobileMenu);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMobileMenu();
+        });
+        window.addEventListener('resize', function () {
+          if (window.matchMedia('(min-width: 768px)').matches) {
+            closeMobileMenu();
+          }
+        });
+      })();
   </script>
 
   <script>
@@ -697,12 +719,12 @@ We are convinced that the best way to discover Malaga is not from a bus window, 
   </script>
 
   <a id="fh-booking-btn" href="https://fareharbor.com/embeds/book/malagaslow/?full-items=yes"
-     class="fixed bottom-6 right-6 z-[9999] bg-[#307EFF] text-white text-sm md:text-base font-semibold rounded-full px-6 py-3 shadow-lg transition-all duration-500 ease-in-out opacity-100 scale-100 hover:bg-[#4B8BFF] hover:-translate-y-1 hover:shadow-xl active:translate-y-0">
+    class="fixed bottom-6 right-6 z-[9999] bg-[#307EFF] text-white text-sm md:text-base font-semibold rounded-full px-6 py-3 shadow-lg transition-all duration-500 ease-in-out opacity-100 scale-100 hover:bg-[#4B8BFF] hover:-translate-y-1 hover:shadow-xl active:translate-y-0">
     Book your tour
   </a>
   <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
   <script>
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const btn = document.getElementById('fh-booking-btn');
       const footer = document.querySelector('footer');
       if (!btn || !footer) return;
@@ -725,4 +747,5 @@ We are convinced that the best way to discover Malaga is not from a bus window, 
   </script>
 
 </body>
+
 </html>
