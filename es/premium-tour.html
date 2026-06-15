@@ -44,28 +44,6 @@
       font-weight: 600;
     }
 
-    /* Lenis smooth scroll */
-    html.lenis,
-    html.lenis.lenis-smooth {
-      scroll-behavior: auto;
-    }
-
-    .lenis.lenis-smooth {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overflow: auto;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-    }
-
     /* Time/price info tags: default gray, hover = blue slide-in from left */
     .info-tag {
       position: relative;
@@ -301,18 +279,18 @@
       <div class="h-full flex flex-col gap-6 lg:w-[40%] lg:flex-shrink-0 lg:min-w-0 lg:h-full lg:min-h-[500px]">
         <div class="flex-1 min-h-0 hidden md:flex md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-4 lg:grid lg:grid-cols-[1.2fr_1fr] lg:grid-rows-[1fr_1fr] lg:gap-4 lg:w-full lg:h-full">
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:row-span-2 lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Catedral_Oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Catedral de Málaga y centro histórico">
-              <img src="../img/Catedral_Oldtown.png" alt="Catedral de Málaga y centro histórico" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="../img/Gibralfaro.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Catedral de Málaga y centro histórico">
+              <img src="../img/Gibralfaro.png" alt="Catedral de Málaga y centro histórico" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Teatro_oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Teatro Romano y entorno de la Alcazaba">
-              <img src="../img/Teatro_oldtown.png" alt="Teatro Romano y entorno de la Alcazaba" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="../img/Coastal.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Teatro Romano y entorno de la Alcazaba">
+              <img src="../img/Coastal.png" alt="Teatro Romano y entorno de la Alcazaba" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Fuente_oldtown.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Calles del casco antiguo y fuentes">
-              <img src="../img/Fuente_oldtown.png" alt="Calles del casco antiguo y fuentes" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="../img/Barca.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Calles del casco antiguo y fuentes">
+              <img src="../img/Barca.png" alt="Calles del casco antiguo y fuentes" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
         </div>
@@ -512,44 +490,6 @@
     })();
   </script>
 
-  <script type="module">
-    import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm';
-
-    const lenis = new Lenis({
-      duration: 1.35,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      autoResize: true,
-      prevent: (node) => node.closest('.fareharbor-lightframe, #fareharbor-lightframe-container, iframe'),
-    });
-
-    window.FH = window.FH || {};
-    const _fhPrev = window.FH.autoLightframe;
-    const _fhBase = _fhPrev && typeof _fhPrev === 'object' ? _fhPrev : {};
-    const _fhOnOpen = _fhBase.onOpen;
-    const _fhOnClose = _fhBase.onClose;
-    window.FH.autoLightframe = {
-      ..._fhBase,
-      onOpen: () => {
-        lenis.stop();
-        if (typeof _fhOnOpen === 'function') _fhOnOpen();
-      },
-      onClose: () => {
-        lenis.start();
-        if (typeof _fhOnClose === 'function') _fhOnClose();
-      },
-    };
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-  </script>
   <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </body>
 

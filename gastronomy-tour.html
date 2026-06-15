@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tour Express | Málaga Slow</title>
+  <title>Gastronomy Tour - Malagaslow</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,7 +18,7 @@
   <style>
     @font-face {
       font-family: 'Gilroy';
-      src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
+      src: url('fonts/Gilroy-Regular.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -26,7 +26,7 @@
 
     @font-face {
       font-family: 'Gilroy';
-      src: url('../fonts/Gilroy-SemiBold.ttf') format('truetype');
+      src: url('fonts/Gilroy-SemiBold.ttf') format('truetype');
       font-weight: 600;
       font-style: normal;
       font-display: swap;
@@ -123,14 +123,14 @@
   <header
     class="sticky top-0 w-full z-50 flex items-center justify-between px-6 md:px-10 lg:px-16 py-4 bg-transparent transition-all duration-300 ease-in-out">
     <a href="index.html" class="flex items-center">
-      <img src="../img/Logo_Header.png" alt="Logotipo Málaga Slow" class="h-10 w-auto object-contain" />
+      <img src="img/Logo_Header.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
     </a>
 
     <!-- Desktop nav: hidden on mobile -->
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html#hero"
         class="relative group text-[#307EFF] font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
-        <span>Inicio</span>
+        <span>Home</span>
         <span
           class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
       </a>
@@ -141,17 +141,17 @@
       </a>
       <a href="index.html#about"
         class="relative group text-[#307EFF] font-semibold tracking-[-0.02em] transition-colors duration-300 py-1">
-        <span>Nosotros</span>
+        <span>About Us</span>
         <span
           class="nav-underline absolute -bottom-1 left-0 w-0 h-[2px] bg-[#307EFF] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <div class="flex items-center gap-4 ml-4 pl-4 border-l border-[#307EFF]/20">
-        <a href="#">
-          <img src="../img/icons/spain_flag.svg"
+        <a href="es/gastronomy-tour.html">
+          <img src="img/icons/spain_flag.svg"
             class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
         </a>
-        <a href="../express-tour.html">
-          <img src="../img/icons/uk_flag.svg"
+        <a href="#">
+          <img src="img/icons/uk_flag.svg"
             class="h-5 w-auto rounded-sm object-contain hover:opacity-80 transition-opacity cursor-pointer" />
         </a>
       </div>
@@ -160,7 +160,7 @@
     <!-- Burger button: visible only on mobile -->
     <button type="button" id="burger-btn"
       class="flex md:hidden items-center justify-center w-10 h-10 text-[#1E1E1E] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#307EFF] focus:ring-offset-2 rounded-lg"
-      aria-expanded="false" aria-label="Abrir menú">
+      aria-expanded="false" aria-label="Open menu">
       <span class="burger-icon text-[#307EFF]" aria-hidden="true">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
@@ -175,24 +175,24 @@
     aria-hidden="true"></div>
   <aside id="mobile-menu"
     class="fixed top-0 right-0 h-screen w-[320px] max-w-[85vw] bg-white z-[100] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 pb-8 px-8"
-    aria-label="Menú principal" aria-hidden="true">
-    <button type="button" id="mobile-menu-close" aria-label="Cerrar menú"
+    aria-label="Main menu" aria-hidden="true">
+    <button type="button" id="mobile-menu-close" aria-label="Close menu"
       class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#307EFF] focus:ring-offset-2 rounded-lg">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
     <div id="mobile-menu-content" class="transition-opacity duration-300 ease-out flex-1">
-      <nav class="flex flex-col text-left" aria-label="Navegación móvil">
+      <nav class="flex flex-col text-left" aria-label="Mobile navigation">
         <a href="index.html#hero"
-          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Inicio</a>
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Home</a>
         <a href="index.html#tours"
           class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Tours</a>
         <a href="index.html#about"
-          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Nosotros</a>
+          class="mobile-nav-link text-left text-[#1E1E1E] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-[24px] font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">About Us</a>
+        <a href="es/index.html"
+          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Spanish</a>
         <a href="#"
-          class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">Español</a>
-        <a href="../index.html"
           class="mobile-lang-option block w-full text-left text-[#BCBCBC] hover:text-[#307EFF] transition-colors duration-200 py-4 px-2 text-base font-medium leading-tight tracking-[-0.06em] border-b border-gray-100">English</a>
       </nav>
     </div>
@@ -203,25 +203,20 @@
       <!-- Left column (60%) -->
       <div class="space-y-12 lg:w-[60%] lg:flex-shrink-0 lg:min-w-0">
         <div class="max-w-[400px] md:max-w-xl mx-auto md:mx-0">
-          <h1 class="text-[#1E1E1E] text-4xl md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] mb-4">Tour Express
-          </h1>
+          <h1 class="text-[#1E1E1E] text-4xl md:text-[40px] font-bold tracking-[-0.04em] leading-[1.1] mb-4">
+            Gastronomy Tour</h1>
           <div class="w-full h-px bg-[#307EFF]/30 mb-4" aria-hidden="true"></div>
           <p class="text-[#1E1E1E] text-base md:text-lg !leading-[1.3rem] md:!leading-[1.5rem] tracking-[-0.04em]">
-            Vive la esencia de Málaga en tiempo récord. Nuestro Tour Express te lleva directamente a las alturas más
-            espectaculares de la ciudad.
-            <br><br>
-            Esta ruta está pensada para quienes quieren ver lo imprescindible sin prisas. Comenzamos el ascenso
-            recorriendo la costa mediterránea de la playa de La Malagueta y las tranquilas calles arboladas del elegante
-            barrio de El Limonar. El punto culminante es el mirador de Gibralfaro, donde haremos una parada para que
-            puedas fotografiar las vistas panorámicas del puerto y la bahía. En el descenso, contemplarás la histórica
-            plaza de toros, completando un recorrido redondo en un solo trayecto.
+            Experience the perfect blend of Málaga’s coastal beauty and its rich culinary heritage. This private experience takes you on a panoramic electric tuk tuk ride before treating you to the authentic flavors of the Mediterranean.
+
+We will cruise along the shores of La Malagueta beach and through the elegant El Limonar district, making a strategic photo stop at the Gibralfaro Viewpoint for spectacular views over the bay. Afterward, your journey continues to El Palo, one of Málaga’s most traditional fishing neighborhoods. At a beloved local seaside restaurant, El Narval, you will indulge in a curated tasting of fresh catches, traditional open-fire sardine espetos, and local specialties paired with regional wine. It is the ultimate loop to savor the city's maritime soul.
           </p>
         </div>
 
         <!-- Time and price info tags (informational only) -->
         <div class="flex items-center gap-2 max-w-[400px] mx-auto md:mx-0">
-          <span class="info-tag" aria-label="Duración: 90 minutos"><span class="info-tag-text">40 min</span></span>
-          <span class="info-tag" aria-label="Precio: 120 euros"><span class="info-tag-text">20 € / pax</span></span>
+          <span class="info-tag" aria-label="Duration: 2.5 hours"><span class="info-tag-text">150 min</span></span>
+          <span class="info-tag" aria-label="Price: 93 euros"><span class="info-tag-text">70 € / pax</span></span>
         </div>
 
         <!-- Info grid: Water, Capacity, Safety (with blue vertical dividers) -->
@@ -236,44 +231,45 @@
                 </svg>
                 <h3
                   class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
-                  Agua incluida</h3>
+                  Water included</h3>
               </div>
               <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
-                Incluimos una botella de agua mineral por persona para que disfrutes del tour con total comodidad.
+                Stay hydrated while you explore. We provide a fresh bottle of mineral water for every guest on our
+                private Málaga tour.
               </p>
             </div>
             <div class="flex-1 flex flex-col pt-4 sm:pt-0 pl-0 pr-4 sm:px-4">
               <div class="group flex flex-row items-center gap-2 mb-2">
-                <img src="../img/icons/vector_four.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
+                <img src="img/icons/vector_four.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
                   aria-hidden="true" />
                 <h3
                   class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
-                  Capacidad</h3>
+                  Capacity</h3>
               </div>
               <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
-                Nuestros tuk-tuks tienen capacidad para hasta 4 pasajeros. Ideal para una experiencia privada en familia
-                o con amigos.
+                Our Tuk Tuks carry up to 4 passengers, making this the perfect private experience for families or small
+                groups.
               </p>
             </div>
             <div class="flex-1 flex flex-col pt-4 sm:pt-0 pl-0 pr-4 sm:px-0 sm:pl-4">
               <div class="group flex flex-row items-center gap-2 mb-2">
-                <img src="../img/icons/Vector_baby.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
+                <img src="img/icons/Vector_baby.png" alt="" class="w-6 h-6 flex-shrink-0 object-contain"
                   aria-hidden="true" />
                 <h3
                   class="text-[#1E1E1E] font-bold text-lg tracking-[-0.02em] transition-all duration-[600ms] ease-in-out group-hover:translate-x-2">
-                  Seguridad</h3>
+                  Safety</h3>
               </div>
               <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em] text-gray-600 text-left">
-                Un recorrido seguro y cómodo, apto para niños a partir de 4 años, pensado para que disfrutes sin
-                preocupaciones.
+                Our tours are safe, secure, and suitable for children from 4 years old, ensuring a worry-free experience
+                in the historic center.
               </p>
             </div>
           </div>
         </div>
 
-        <a href="https://fareharbor.com/embeds/book/malagaslow/items/715223/?full-items=yes&amp;locale=es"
+        <a href="https://fareharbor.com/embeds/book/malagaslow/items/715260/?full-items=yes&amp;locale=en"
           class="fh-button block mt-12 mb-12 md:mt-8 md:mb-0 bg-[#307EFF] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 mx-auto md:inline-block md:mx-0 w-fit">
-          Reserva tu tour
+          Book your tour
         </a>
       </div>
 
@@ -281,18 +277,18 @@
       <div class="h-full flex flex-col gap-6 lg:w-[40%] lg:flex-shrink-0 lg:min-w-0 lg:h-full lg:min-h-[500px]">
         <div class="flex-1 min-h-0 hidden md:flex md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-4 lg:grid lg:grid-cols-[1.2fr_1fr] lg:grid-rows-[1fr_1fr] lg:gap-4 lg:w-full lg:h-full">
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:row-span-2 lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Gibralfaro.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Costa de Málaga y barrio marinero">
-              <img src="../img/Gibralfaro.png" alt="Costa de Málaga y barrio marinero" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/espeto.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Gastronomy Tour in Málaga">
+              <img src="img/espeto.png" alt="Gastronomy Tour in Málaga" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/merced.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Tradición y sabores junto al mar">
-              <img src="../img/merced.png" alt="Tradición y sabores junto al mar" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/merced.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Old fishing quarter and Mediterranean shores">
+              <img src="img/Barca.png" alt="Old fishing quarter and Mediterranean shores" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/ayuntamiento.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Vistas del litoral en el Tour Express">
-              <img src="../img/ayuntamiento.png" alt="Vistas del litoral en el Tour Express" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="img/ayuntamiento.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Coastal Escape sea and beach views">
+              <img src="img/Farola.png" alt="Coastal Escape sea and beach views" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
         </div>
@@ -302,8 +298,8 @@
             <span class="text-white font-bold text-lg">!</span>
           </div>
           <p class="text-[#1E1E1E] text-sm leading-[1.15] tracking-[-0.02em]">
-            Si necesitas cancelar, avísanos con al menos <strong>24 horas de antelación</strong> para obtener el reembolso
-            completo. Las cancelaciones dentro de las 24 horas previas al tour no serán reembolsables.
+            If you need to cancel, please let us know at least <strong>24 hours in advance</strong> for a full refund.
+            Cancellations made within 24 hours of the scheduled tour will not be eligible for reimbursement.
           </p>
         </div>
       </div>
@@ -317,7 +313,7 @@
     <div class="md:hidden flex flex-col items-start py-10 px-8 text-left text-[11px]">
       <!-- Top row (Logo + Contact columns) -->
       <div class="flex flex-row justify-between w-full items-start">
-        <img src="../img/Logo_footer.png" alt="Málaga Slow Logo" class="h-8 w-auto object-contain" />
+        <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-8 w-auto object-contain" />
 
         <div class="flex flex-row gap-x-4">
           <div class="flex flex-col space-y-2 w-fit min-w-0">
@@ -336,10 +332,10 @@
 
       <!-- Legal level (Copyright + Policies) -->
       <div class="mt-14 flex flex-row justify-between items-end w-full">
-        <p class="w-fit">© 2026 Todos los derechos reservados</p>
+        <p class="w-fit">© 2026 All Rights Reserved</p>
         <div class="flex flex-row gap-x-4 w-fit">
-          <a href="#" class="w-fit">Privacidad</a>
-          <a href="#" class="w-fit">Cookies</a>
+          <a href="#" class="w-fit">Privacy Policy</a>
+          <a href="#" class="w-fit">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -348,8 +344,8 @@
     <div class="hidden md:block py-8 px-8 md:px-16">
       <div class="max-w-[1440px] mx-auto flex flex-row justify-between items-start">
         <div class="flex flex-col items-start">
-          <img src="../img/Logo_footer.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
-          <p class="mt-14 text-xs">© 2026 Todos los derechos reservados</p>
+          <img src="img/Logo_footer.png" alt="Málaga Slow Logo" class="h-10 w-auto object-contain" />
+          <p class="mt-14 text-xs">© 2026 All Rights Reserved</p>
         </div>
 
         <div class="grid grid-cols-2 gap-x-10 text-left">
@@ -360,7 +356,7 @@
               <a href="https://wa.me/34658451301?text=Hola%20Málaga%20Slow!%20Me%20gustaría%20pedir%20información%20sobre%20un%20tour."
                 target="_blank" rel="noopener noreferrer" class="text-xs text-[#FFFFFF]">WhatsApp</a>
             </div>
-            <a href="#" class="mt-14 text-xs text-[#FFFFFF]">Política de privacidad</a>
+            <a href="#" class="mt-14 text-xs text-[#FFFFFF]">Privacy Policy</a>
           </div>
 
           <div class="flex flex-col">
@@ -368,7 +364,7 @@
               <a href="tel:+34658451301" class="text-xs text-[#FFFFFF]">+34 658 451 301</a>
               <a href="mailto:info@malagaslow.com" class="text-xs text-[#FFFFFF]">info@malagaslow.com</a>
             </div>
-            <a href="#" class="mt-14 text-xs text-[#FFFFFF]">Política de cookies</a>
+            <a href="#" class="mt-14 text-xs text-[#FFFFFF]">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -390,7 +386,7 @@
         if (burgerIcon) burgerIcon.classList.add('open');
         if (burgerBtn) {
           burgerBtn.setAttribute('aria-expanded', 'true');
-          burgerBtn.setAttribute('aria-label', 'Cerrar menú');
+          burgerBtn.setAttribute('aria-label', 'Close menu');
         }
         if (backdrop) {
           backdrop.classList.remove('opacity-0', 'pointer-events-none');
@@ -415,7 +411,7 @@
           if (burgerIcon) burgerIcon.classList.remove('open');
           if (burgerBtn) {
             burgerBtn.setAttribute('aria-expanded', 'false');
-            burgerBtn.setAttribute('aria-label', 'Abrir menú');
+            burgerBtn.setAttribute('aria-label', 'Open menu');
           }
           if (backdrop) {
             backdrop.classList.add('opacity-0', 'pointer-events-none');
@@ -437,6 +433,9 @@
       mobileLinks.forEach(function (link) {
         link.addEventListener('click', closeMobileMenu);
       });
+      document.querySelectorAll('.mobile-lang-option').forEach(function (btn) {
+        btn.addEventListener('click', closeMobileMenu);
+      });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeMobileMenu();
       });
@@ -447,15 +446,20 @@
       });
     })();
   </script>
-
+  <script>
+    (function () {
+      var toggle = document.getElementById('lang-toggle');
+      var menu = document.getElementById('lang-menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function (e) { e.stopPropagation(); menu.classList.toggle('hidden'); });
+      menu.addEventListener('click', function (e) { e.stopPropagation(); });
+      document.addEventListener('click', function () { menu.classList.add('hidden'); });
+    })();
+  </script>
   <!-- Lightbox for gallery images (iPad/Desktop) -->
-  <div id="lightbox" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4" aria-hidden="true"
-    role="dialog" aria-modal="true" aria-label="Vista de imagen">
-    <button type="button" id="lightbox-close"
-      class="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white"
-      aria-label="Cerrar">&times;</button>
-    <img id="lightbox-img" src="" alt=""
-      class="max-w-full max-h-[90vh] w-auto h-auto object-contain drop-shadow-2xl rounded-lg" />
+  <div id="lightbox" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/90 p-4" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image view">
+    <button type="button" id="lightbox-close" class="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close lightbox">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] w-auto h-auto object-contain drop-shadow-2xl rounded-lg" />
   </div>
   <script>
     (function () {
@@ -496,4 +500,3 @@
 </body>
 
 </html>
-

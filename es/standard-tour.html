@@ -44,28 +44,6 @@
       font-weight: 600;
     }
 
-    /* Lenis smooth scroll */
-    html.lenis,
-    html.lenis.lenis-smooth {
-      scroll-behavior: auto;
-    }
-
-    .lenis.lenis-smooth {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overflow: auto;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-    }
-
     /* Time/price info tags: default gray, hover = blue slide-in from left */
     .info-tag {
       position: relative;
@@ -305,13 +283,13 @@
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Museo_picasso.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Calles con arte e inspiración">
-              <img src="../img/Museo_picasso.png" alt="Calles con arte e inspiración" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="../img/Malagueta.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Calles con arte e inspiración">
+              <img src="../img/Malagueta.png" alt="Calles con arte e inspiración" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
           <div class="rounded-lg overflow-hidden h-full md:w-[300px] md:h-[300px] md:flex-shrink-0 md:snap-center lg:h-full lg:w-full lg:rounded-xl">
-            <a href="../img/Museo_malaga.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Arquitectura y rincones culturales">
-              <img src="../img/Museo_malaga.png" alt="Arquitectura y rincones culturales" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
+            <a href="../img/Farola.png" class="gallery-lightbox-trigger block h-full cursor-pointer" data-alt="Arquitectura y rincones culturales">
+              <img src="../img/Farola.png" alt="Arquitectura y rincones culturales" class="w-full h-full object-cover drop-shadow-sm rounded-lg transition-all duration-300 hover:scale-[1.03] hover:opacity-90" />
             </a>
           </div>
         </div>
@@ -511,44 +489,6 @@
     })();
   </script>
 
-  <script type="module">
-    import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm';
-
-    const lenis = new Lenis({
-      duration: 1.35,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      autoResize: true,
-      prevent: (node) => node.closest('.fareharbor-lightframe, #fareharbor-lightframe-container, iframe'),
-    });
-
-    window.FH = window.FH || {};
-    const _fhPrev = window.FH.autoLightframe;
-    const _fhBase = _fhPrev && typeof _fhPrev === 'object' ? _fhPrev : {};
-    const _fhOnOpen = _fhBase.onOpen;
-    const _fhOnClose = _fhBase.onClose;
-    window.FH.autoLightframe = {
-      ..._fhBase,
-      onOpen: () => {
-        lenis.stop();
-        if (typeof _fhOnOpen === 'function') _fhOnOpen();
-      },
-      onClose: () => {
-        lenis.start();
-        if (typeof _fhOnClose === 'function') _fhOnClose();
-      },
-    };
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-  </script>
   <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </body>
 

@@ -57,28 +57,6 @@
       font-weight: 600;
     }
 
-    /* Lenis smooth scroll recommended */
-    html.lenis,
-    html.lenis.lenis-smooth {
-      scroll-behavior: auto;
-    }
-
-    .lenis.lenis-smooth {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overflow: auto;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-    }
-
     /* Time/price info tags: default gray, hover = blue slide-in from left */
     .info-tag {
       position: relative;
@@ -312,9 +290,9 @@
           class="scroll-mt-24 grid grid-cols-1 gap-8 items-stretch md:flex md:flex-row md:overflow-x-auto md:snap-x md:snap-mandatory md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
           <!-- Tarjeta 1: Tour Standard -->
           <article
-            class="relative cursor-pointer max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
-              <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
                 <img src="../img/Tour_Standard_Card.png" alt="Tour Standard por Málaga" class="w-full h-full object-cover" />
               </div>
             </div>
@@ -339,10 +317,10 @@
           </article>
           <!-- Tarjeta 2: Tour Express -->
           <article
-            class="relative cursor-pointer max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
-              <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
-                <img src="../img/Coastal_Tour_card.png" alt="Tour Express por la costa" class="w-full h-full object-cover" />
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
+                <img src="../img/ayuntamiento.png" alt="Tour Express por la costa" class="w-full h-full object-cover" />
               </div>
             </div>
             <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
@@ -365,9 +343,9 @@
           </article>
           <!-- Tarjeta 3: Tour Premium -->
           <article
-            class="relative cursor-pointer max-w-[400px] mx-auto flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
             <div class="p-4 pb-0 shrink-0">
-              <div class="rounded-lg overflow-hidden aspect-[4/3] w-full">
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
                 <img src="../img/Oldtown_Tour_Card.png" alt="Tour Premium por el casco antiguo" class="w-full h-full object-cover" />
               </div>
             </div>
@@ -388,6 +366,82 @@
                 Más info</a>
             </div>
             <a href="premium-tour.html" class="absolute inset-0 z-10" aria-label="Abrir página del Tour Premium"></a>
+          </article>
+          <!-- Tarjeta 4: Slow Wine Experience -->
+          <article
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            <div class="p-4 pb-0 shrink-0">
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
+                <img src="../img/wine_tour_img.png" alt="Slow Wine Experience por Málaga" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
+              <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Slow Wine Tour</h3>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Una fusión exclusiva del encanto de Málaga y sus mejores sabores.
+                Disfruta de un tour privado de 60 min seguido de una cata de 6 vinos locales y maridaje gourmet.
+              </p>
+            </div>
+            <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="info-tag"><span class="info-tag-text">120 min</span></span>
+                <span class="info-tag"><span class="info-tag-text">65 € / pax</span></span>
+              </div>
+              <a href="slow-wine-tour.html"
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">
+                Más info</a>
+            </div>
+            <a href="slow-wine-tour.html" class="absolute inset-0 z-10" aria-label="Abrir página del Slow Wine Experience"></a>
+          </article>
+          <!-- Tarjeta 5: Tour Gastronómico -->
+          <article
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            <div class="p-4 pb-0 shrink-0">
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
+                <img src="../img/espeto.png" alt="Tour Gastronómico" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
+              <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Gastronómico</h3>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Descubre los sabores auténticos de Málaga con esta experiencia culinaria exclusiva, disfrutando de platos tradicionales locales y especialidades junto al mar.
+              </p>
+            </div>
+            <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="info-tag"><span class="info-tag-text">150 min</span></span>
+                <span class="info-tag"><span class="info-tag-text">93 € / pax</span></span>
+              </div>
+              <a href="gastronomy-tour.html"
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">
+                Más info</a>
+            </div>
+            <a href="gastronomy-tour.html" class="absolute inset-0 z-10" aria-label="Abrir página del Tour Gastronómico"></a>
+          </article>
+          <!-- Tarjeta 6: Tour Masterclass de Espetos -->
+          <article
+            class="relative cursor-pointer max-w-[400px] mx-auto lg:max-w-none flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl md:min-w-[350px] md:snap-center lg:min-w-0">
+            <div class="p-4 pb-0 shrink-0">
+              <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[16/9] w-full">
+                <img src="../img/espetoclass.png" alt="Tour Masterclass de Espetos" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex flex-col flex-1 p-5 pt-4 min-h-0">
+              <h3 class="!text-[22px] md:!text-[24px] font-bold mb-2 text-black">Tour Masterclass de Espetos</h3>
+              <p class="text-[#1E1E1E] text-base leading-[1.15] tracking-[-0.03em] flex-1">
+                Aprende el arte de espetar y asar los tradicionales espetos de la mano de un maestro local en la misma playa, seguido de una degustación de tus propias creaciones.
+              </p>
+            </div>
+            <div class="flex justify-between items-center gap-3 p-4 flex-wrap shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="info-tag"><span class="info-tag-text">120 min</span></span>
+                <span class="info-tag"><span class="info-tag-text">98 € / pax</span></span>
+              </div>
+              <a href="espetos-masterclass-tour.html"
+                class="relative z-20 bg-[#307EFF] text-white text-sm font-semibold rounded-full px-6 py-2.5 transition-colors duration-300 ease-out hover:bg-[#4B8BFF] shrink-0">
+                Más info</a>
+            </div>
+            <a href="espetos-masterclass-tour.html" class="absolute inset-0 z-10" aria-label="Abrir página del Tour Masterclass de Espetos"></a>
           </article>
         </div>
       </div>
@@ -421,7 +475,7 @@ Desde los rincones más icónicos hasta esos secretos que solo los locales conoc
       </div>
       <div
         class="order-1 md:order-2 -mx-8 md:mx-0 md:flex-1 md:min-w-0 md:flex md:flex-col md:min-h-0 opacity-0 translate-y-10 transition-all duration-1000 ease-out about-reveal">
-        <img src="../img/Catedral_Section_02.png" alt="Catedral de Málaga y ciudad"
+        <img src="../img/MalagaSlow_team 2.jpg" alt="Catedral de Málaga y ciudad"
           class="w-full h-[70vh] object-cover rounded-none md:rounded-lg md:h-full md:min-h-0" />
       </div>
     </div>
@@ -430,37 +484,60 @@ Desde los rincones más icónicos hasta esos secretos que solo los locales conoc
   <!-- Opiniones de clientes -->
   <section class="w-full bg-white py-18 pb-32 mt-24">
     <div class="max-w-7xl mx-auto px-8">
-      <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black mb-8 md:mb-16">Guest reviews</h2>
+      <div class="flex justify-between items-center w-full mb-8 md:mb-16">
+        <h2 class="text-left text-3xl md:text-4xl font-bold tracking-[-0.04em] text-black">Guest reviews</h2>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJkwvsXzH3cg0RwNmK1fdcm9A" target="_blank"
+          rel="noopener noreferrer"
+          class="text-[#307EFF] hover:text-[#1D4ED8] font-semibold text-sm shrink-0 transition-colors duration-200">
+          Ver más opiniones
+        </a>
+      </div>
       <div
-        class="flex flex-row overflow-x-auto snap-x snap-mandatory gap-8 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        class="flex flex-row overflow-x-auto snap-x snap-mandatory gap-8 pt-2 pb-6 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:pt-0 lg:pb-0 lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <article
-          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
-          <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-[1.35] mb-6 tracking-[-0.06em]">
-            La mejor forma de ver Málaga. Nuestro conductor fue muy amable y conocía a la perfección la historia de la
-            ciudad.
-          </p>
-          <p class="font-bold text-gray-900">Sarah M.</p>
-          <p class="text-xs text-gray-400">Reseña en Google</p>
+          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-white rounded-xl shadow-md p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
+          <div class="flex justify-between items-start w-full mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm bg-blue-500 shrink-0"
+                aria-hidden="true">F</div>
+              <div class="flex flex-col">
+                <p class="font-bold text-gray-900">Franck Saint</p>
+                <p class="text-xs text-gray-400">Google Review</p>
+              </div>
+            </div>
+            <div class="text-[#307EFF] text-lg shrink-0" aria-hidden="true">★★★★★</div>
+          </div>
+          <p class="text-gray-700 leading-[1.35] tracking-[-0.06em]">Great experience! Very professional service and super friendly as well.</p>
         </article>
         <article
-          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
-          <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-[1.35] mb-6 tracking-[-0.06em]">
-            Nos encantó el tour por el casco antiguo. Mucho más personal que un autobús grande. ¡Muy recomendable!
-          </p>
-          <p class="font-bold text-gray-900">James & Laura</p>
-          <p class="text-xs text-gray-400">Reseña en Google</p>
+          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-white rounded-xl shadow-md p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
+          <div class="flex justify-between items-start w-full mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm bg-emerald-500 shrink-0"
+                aria-hidden="true">P</div>
+              <div class="flex flex-col">
+                <p class="font-bold text-gray-900">Pol Nadaya</p>
+                <p class="text-xs text-gray-400">Google Review</p>
+              </div>
+            </div>
+            <div class="text-[#307EFF] text-lg shrink-0" aria-hidden="true">★★★★★</div>
+          </div>
+          <p class="text-gray-700 leading-[1.35] tracking-[-0.06em]">Brutal! No nos esperábamos pasarlo tan bien. El paseo en tuk tuk con Málaga Slow fue súper divertido, con un trato genial y un montón de historias por el camino.</p>
         </article>
         <article
-          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-[#F3F4F6] rounded-[5px] p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
-          <div class="text-[#307EFF] text-lg mb-4" aria-hidden="true">★★★★★</div>
-          <p class="text-gray-700 leading-[1.35] mb-6 tracking-[-0.06em]">
-            Hicimos la ruta costera: vistas impresionantes y recomendaciones locales para probar los mejores espetos.
-            Un día perfecto.
-          </p>
-          <p class="font-bold text-gray-900">Elena K.</p>
-          <p class="text-xs text-gray-400">Reseña en Google</p>
+          class="max-w-[320px] mx-auto flex-shrink-0 w-[85vw] snap-center bg-white rounded-xl shadow-md p-8 md:min-w-[350px] lg:max-w-[400px] lg:w-full lg:mx-0">
+          <div class="flex justify-between items-start w-full mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm bg-amber-500 shrink-0"
+                aria-hidden="true">V</div>
+              <div class="flex flex-col">
+                <p class="font-bold text-gray-900">Valeria Chietino</p>
+                <p class="text-xs text-gray-400">Google Review</p>
+              </div>
+            </div>
+            <div class="text-[#307EFF] text-lg shrink-0" aria-hidden="true">★★★★★</div>
+          </div>
+          <p class="text-gray-700 leading-[1.35] tracking-[-0.06em]">El guía fue súper amable, atento y conocía perfectamente la historia, cultura y rincones más bonitos de la ciudad. Además, el ambiente fue muy agradable y relajado, nada masificado, lo que hizo que disfrutáramos muchísimo más de la experiencia.</p>
         </article>
       </div>
     </div>
