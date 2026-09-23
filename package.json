@@ -1,0 +1,13 @@
+{
+  "name": "malagaslow-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MalagaSlow static site – compiled Tailwind CSS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/src.css -o ./css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./css/src.css -o ./css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
